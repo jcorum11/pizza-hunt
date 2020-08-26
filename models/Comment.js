@@ -3,8 +3,16 @@ const moment = require("moment");
 
 const ReplySchema = new Schema(
   {
-    replyBody: { type: String },
-    writtenBy: { type: String },
+    replyBody: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    writtenBy: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -21,8 +29,16 @@ const CommentSchema = new Schema(
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
-    writtenBy: { type: String },
-    commentBody: { type: String },
+    writtenBy: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    commentBody: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     createdAt: {
       type: Date,
       default: Date.now,
